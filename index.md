@@ -3,36 +3,145 @@ layout: index
 published: true
 ---
 
-Course-in-a-Box is a free tool for building and publishing online courses—no prior coding experience required. This guide was made using Course-in-a-Box, so what you see here is what you’ll start with. There are three modules that walk through the course creation process, all linked in the nav bar at the top of the page:
-* **[Setup](/modules/setup/getting-started/)** - Get your instance of Course-in-a-Box up and running
-* **[Content](/modules/content/markdown-and-media)** -  Update the course structure and add your copy & media
-* **[Customize](/modules/customize/favicon)** - Add some (optional) finishing touches
+This course offers a practical introduction to Pathogen Bioinformatics for Genomic Epidemiology, using both Galaxy and command line interface (CLI). It will use analysis of SARS-CoV-2 sequencing data as an example and also cover handling metadata to add context
+to the sequencing data being discussed and illustrate techniques in genomic epidemiology.
 
-<br> 
+## Programme
 
-#### Course-in-a-Box Courses We Love ❤️
-Here are some examples of Course-in-a-Box in the wild:
+The course is a two week (10 days) programme of in-person instruction combining theoretical back with practical instruction and opporunity for hands-on practice of the skills presented.
 
-* [We Are AI](https://dataresponsibly.github.io/we-are-ai/) by Center for Responsible AI
-* [How to Talk about Race](https://how-to-talk-about-race.p2pu.org/) by Amrita Patel and Denise LaForce
-* [Leveraging Learning for Life](https://leveraging-learning.p2pu.org/) by College Unbound
-* [Making and Learning](http://p2pu.github.io/makingandlearning/) by Children’s Museum of Pittsburgh
-* [Designing for Documentation and Assessment](https://playfulmit.github.io/beyond-rubrics/) by MIT Playful Journey Lab
-* [ExplOERer Course](http://www.exploerercourse.org/en/) by Gothenburg University, Open University, and CC Poland
-* [Learning about Learning Circles](https://p2pu.github.io/learning-about-learning-circles/) by P2PU
-* [Queer Cinema for High School](https://queercinema.net/) by Sarah Schrag
+<!-- LEAVE THIS TABLE ALONE - the rest of the page continues where it says BELOWTHETABLE -->
 
-<br> 
+<style>
+    td, th, table { border: 1px solid black; }
+    td, th {padding-left: 10px; padding-right: 10px; }
+    th { font-weight: bold }
+    .break { background: lightblue; }
+    .weekheader { background: green; color: white }
+</style>
 
-#### Need some help?
-Our [community forum](https://community.p2pu.org/c/tech/course-in-a-box/78) is a great place to ask questions or find help when you get stuck. Feel free to post there anytime!
+<table>
+  <tr class="weekheader">
+    <td colspan="6">
+      <strong>Week 1</strong>
+    </td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td></td>
+    <th>Day 1 (Mon)</th>
+    <th>Day 2 (Tue)</th>
+    <th>Day 3 (Wed)</th>
+    <th>Day 4 (Thu)</th>
+    <th>Day 5 (Fri)</th>
+  </tr>
+  <tr>
+    <td>09h00</td>
+    <td rowspan="2">Introduction to Sequencing and Genomic Epidemiology</td>
+    <td rowspan="2">
+      Metadata and data organisation -
 
-You can also hire P2PU to provide support with learning design, technical setup, course customizations, or web hosting. If you’re interested in collaborating on a project, reach out to us at thepeople@p2pu.org
+      <p>Introduction to SARS-CoV-2 metadata organisation</p>
+    </td>
 
-<br> 
+    <td>SARS-CoV-2 amplicon sequencing and primer schemes</td>
+    <td rowspan="2">Continue with Intro to SARS-CoV-2 Practical</td>
+    <td>Computing a phylogeny in Galaxy</td>
+  </tr>
+  <tr>
+    <td>09h30</td>
+    <td>Intro to SARS-CoV-2 analysis with Galaxy</td>
+    <td>Visualising phylogeny and metadata using Microreact</td>
+  </tr>
+  <tr class="break">
+    <td>11h00</td>
+    <td colspan="5">Tea Break</td>
+  </tr>
+  <tr>
+    <td>11h30</td>
+    <td>Introduction to Galaxy 1</td>
+    <td>Introduction to Galaxy 2</td>
+    <td>Running Galaxy SARS-CoV-2 workflow</td>
+    <td>Intro to Phylogenomics</td>
+    <td>Hands on with phylogeny and Microreact</td>
+  </tr>
+  <tr class="break">
+    <td>13h00</td>
+    <td colspan="5">Lunch Break</td>
+  </tr>
+  <tr>
+    <td>14h00</td>
+    <td>Introduction to Galaxy 1 Practical</td>
+    <td>Introduction to Galaxy 2 Practical</td>
+    <td>Galaxy SARS-CoV-2 Practical</td>
+    <td>Nextclade for SARS-CoV-2 + Practical</td>
+    <td></td>
+  </tr>
+</table>
 
-#### About Course-in-a-Box
+<hr>
 
-P2PU created Course-in-a-Box in 2014 as a free and lightweight tool for building online courses. We wanted to preserve the modular structure of MOOCs outside of the bulky (and often proprietary) environment of learning/content management systems. Course-in-a-Box is open-source, and we welcome contributions [on our Github repo](https://github.com/p2pu/course-in-a-box).
+<table>
+  <tr class="weekheader">
+    <td colspan="6"><strong>Week 2</strong></td>
+  </tr>
+  <tr>
+    <td></td>
+    <th>Day 6 (Mon)</th>
+    <th>Day 7 (Tue)</th>
+    <th>Day 8 (Wed)</th>
+    <th>Day 9 (Thu)</th>
+    <th>Day 10 (Fri)</th>
+  </tr>
+  <tr>
+    <td>09h00</td>
+    <td rowspan="2">Intro to the Shell and Command Line</td>
+    <td>Setup of Software for Shell</td>
+    <td>Installing software with Conda and Mamba</td>
+    <td>Introduction to Nextflow</td>
+    <td rowspan="2">Building a workflow in Nextflow</td>
+  </tr>
+  <tr>
+    <td>09h30</td>
+    <td>Genomics in the Shell</td>
+    <td>SSH, SCP and Rsync</td>
+    <td>Nextflow workflow for SARS-CoV-2</td>
+  </tr>
+  <tr class="break">
+    <td>11h00</td>
+    <td colspan="5">Tea Break</td>
+  </tr>
+  <tr>
+    <td>11h30</td>
+    <td>Intro to the Shell</td>
+    <td>Genomics in the Shell</td>
+    <td>Manipulating tabular data with csvtk</td>
+    <td>Nextflow workflow for SARS-CoV-2</td>
+    <td>Building a workflow in Nextflow</td>
+  </tr>
+  <tr class="break">
+    <td>13h00</td>
+    <td colspan="5">Lunch Break</td>
+  </tr>
+  <tr>
+    <td>14h00</td>
+    <td>Intro to the Shell - Practical</td>
+    <td>Genomics in the Shell - Practical</td>
+    <td>Practical exercises</td>
+    <td>Nextflow practical exercises</td>
+    <td>Nextflow practical exercises</td>
+  </tr>
+</table>
 
-p.s. Designing a course for learning circles? [Check out the Learning Circle Course Creation guide](https://docs.p2pu.org/courses/creating-courses) for some best practices on course design.
+<!-- BELOWTHETABLE -->
+
+## Partners
+
+This course is being organised by SANBI (the South African National Bioinformatics Institute) at the University of the Western Cape (UWC)
+in collaboration with Africa CDC (the Africa Centres for Disease Control and Prevention), part of the African Union (AU).
+
+<p float="left">
+  <img src="img/african_union_logo.svg" width="24%" align="top">
+  <img src="img/africacdc_logo.svg" width="24%" align="top">
+  <img src="img/uwc_logo.svg" width="24%" align="top">
+  <img src="img/sanbi_logo.svg" width="24%" align="top">
+</p>
