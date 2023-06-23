@@ -136,8 +136,8 @@ The course is a two week (10 days) programme of in-person instruction combining 
 
 ## Partners
 
-This course is being organised by SANBI (the South African National Bioinformatics Institute) at the University of the Western Cape (UWC)
-in collaboration with Africa CDC (the Africa Centres for Disease Control and Prevention), part of the African Union (AU).
+This course is being organised by [SANBI](https://www.sanbi.ac.za/) (the South African National Bioinformatics Institute) at the 
+[University of the Western Cape (UWC)](https://www.uwc.ac.za/) in collaboration with [Africa CDC](https://africacdc.org) (the Africa Centres for Disease Control and Prevention), part of the African Union (AU).
 
 <p float="left">
   <img src="img/african_union_logo.svg" width="24%" align="top">
