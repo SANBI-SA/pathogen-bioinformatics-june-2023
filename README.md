@@ -14,3 +14,19 @@ Questions? Ask on P2PU's [Community Forum](https://community.p2pu.org/c/tech/cou
 Course-in-a-Box is built by [Peer 2 Peer University](https://www.p2pu.org) and shared under an MIT License.
 
 Course content ("Modules") are shared under a [CC BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/).
+
+# Adding figures
+
+The [jekyll-figure](https://github.com/paulrobertlloyd/jekyll-figure) module has been added to this repository. To make figures, enclose images in `{% figure %}` markdown
+and use the class "caption", i.e.
+
+```
+{% figure [caption: "The Figure Caption"] [class: "caption"] %}
+
+![The Alt Text for the Image](../img/the_image.jpg)
+
+{% endfigure %}
+```
+
+As a convention, images can be placed in an `img/` folder created within the module directory and linked as per the above example.
+

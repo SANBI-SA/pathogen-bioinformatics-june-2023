@@ -33,3 +33,6 @@ jumbotron_color: "#348F41"
 jumbotron_image: "img/bacteria.svg"
 jumbotron_mask: "img/jumbotron-mask.svg"
 # jumbotron_icon: "img/box-icon.png"
+
+plugins:
+  - jekyll-figure
