@@ -1,3 +1,4 @@
 title: Intro to Pathogen Bioinformatics
 description: An introductory course on Pathogen Bioinformatics for Genomic Epidemiology
-modules: [genomic-epidemiology]
+modules: 
+  - "genomic-epidemiology"
