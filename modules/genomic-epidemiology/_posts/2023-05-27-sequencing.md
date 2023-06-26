@@ -146,3 +146,11 @@ of similarity can be applied to the genotypes of isolates to identify clusters.
 Lineage names, sequence types or positions in clusters are all types of information that can be derived from pathogen sequencing. Methods for computing
 such information and the appropriate analysis tools and databases to use in this computation form the basis of the field of pathogen bioinformatics
 for public health.
+
+### Questions for Discussion
+
+You receive sequences from two isolates of SARS-CoV-2 that appear to be genetically identical.
+
+1. Are these isolates part of a single outbreak (i.e. a single transmission chain, where one case might have infected the other)?
+    1. What other information could help to answer this question?
+2. If part of the genome sequence could not be recovered due to low sample quality, would you expect the isolates to look more, or less, similar? Why?
