@@ -4,4 +4,6 @@ modules:
   - "genomic-epidemiology"
   - "galaxy-intro"
   - "data-organisation"
+  - "sars-cov-2-sequencing"
+  
 
