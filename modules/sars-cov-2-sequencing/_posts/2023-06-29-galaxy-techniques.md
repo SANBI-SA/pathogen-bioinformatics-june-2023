@@ -1,5 +1,5 @@
 ---
-title: Galaxy Tips for Pathogen Bioinformatics
+title: Galaxy Tips for Pathogen Bioinformatics Part 1
 ---
 
 ### Organising Data in Galaxy
