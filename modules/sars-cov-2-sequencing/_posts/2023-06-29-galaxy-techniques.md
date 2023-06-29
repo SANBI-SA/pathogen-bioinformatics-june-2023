@@ -66,3 +66,9 @@ Galaxy servers support importing workflows from servers that support the [GA4GH]
 server can thus import workflows from [WorkflowHub.EU](https://workflowhub.eu/) and [Dockstore](https://dockstore.org/).
 
 To import a workflow from one of these servers, go to the _Workflow_ menu, select the _Import_ button and then the _GA4GH servers_ tab. Type in a keyword, e.g. _SARS-CoV-2_ to search for a workflow.
+
+### More Galaxy Tips and Tricks
+
+Almost all of the tutorial mentioned in this submodule are from the [Using Galaxy and Managing your Data](https://training.galaxyproject.org/training-material/topics/galaxy-interface/) part of the Galaxy Training Network website. There you can learn about organising data with the _Rule Based Uploader_, about
+_Searching Your History_ (quick tip: "visible: all state:error" is a good way to find which analyses failed in your history), about _dataset tags_, 
+advanced topics in _Galaxy Workflows_ and more.
