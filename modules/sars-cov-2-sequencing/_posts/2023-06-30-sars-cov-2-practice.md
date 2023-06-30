@@ -51,3 +51,26 @@ the ONT analysis.
 15. How is a BAM file different to MAFFT output file?
 
 16. In what format is a genome consensus file?
+    
+18. How is a BAM file different to MAFFT output file?
+   
+20. If we look into a consensus file, what do we typically see inside?
+    
+22. In what format is a consensus file?
+
+23. What is the average read lengths of your Nanopore sample SRR23801000 before filtering
+    
+25. What percentage of reads had a quality score above 12 for sample SRR23800470 after filtering?
+
+26. Why do we need metadata for a phylogenetics tree?
+    
+28. Name two types of phylogenetics tree formats. Hint: Look under Microreact -> Upload.
+   
+30. What is the correct basic Bioinformatics pipeline for SARS CoV-2?
+    a) Run Quality control on input files -> create an alignment ->  trim your reads -> create a consensus file -> do variant calling -> build a phylogenetics tree
+    b) Run Quality control on input files ->  trim your reads -> create an alignment -> create a consensus file -> do variant calling -> build a phylogenetics tree
+    c) Run Quality control on input files ->  trim your reads -> create an alignment -> do variant calling -> create a consensus file -> build a phylogenetics tree
+
+31. What are the steps to sharing a workflow you created with a colleague?
+  
+
