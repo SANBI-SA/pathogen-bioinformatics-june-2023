@@ -18,3 +18,13 @@ The slides from Prof Alan Christoffels talk on _Introduction to Phylogenomics_
 
 {% pdf "../uploads/Phylo_intro.pptx.pdf" %}
 
+
+Key topics covered in the presentation:
+
+1. Mechanisms of Evolution.
+
+2. Methods for Phylogentic relatedness.
+
+3. Phylogentic tree generation.
+
+4. Applications of phylogenetic trees in disease outbreaks.
