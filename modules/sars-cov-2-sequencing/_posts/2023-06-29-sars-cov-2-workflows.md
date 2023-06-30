@@ -49,5 +49,82 @@ all the read files and using the _Build Dataset List_ option. Give the list a na
 
 Coming Soon
 
+#### Analysing your own data
+
+To analyse your own data you need to:
+
+1. Upload your data into a Galaxy history and organise it into a collection. See the notes in the [Galaxy Tips](galaxy-techniques/) on how to organise data into collections. Each sample should be in its own file.
+
+2. Ensure that you have uploaded a copy of the SARS-CoV-2 MN908947 Reference Genome to your history. The link to upload is [https://www.ebi.ac.uk/ena/browser/api/fasta/MN908947.3?download=true](https://www.ebi.ac.uk/ena/browser/api/fasta/MN908947.3?download=true).
+
+3. Ensure that you have the correct primer BED file that matches you sequencing primers. You can choose from the table below. Copy the
+link and paste it into the Galaxy upload form. Before you upload the dataset choose _bed_ as your format because Galaxy often cannot automatically
+detect that a file is in BED format and will assign it to _tabular_ format. If you find that your uploaded data is not in BED format, edit it 
+(with the Pencil icon), go to the _Convert_ tab and change the datatype in the bottom section of the form (in the _New Type_ section, not the
+_Target datatype_ section).
+
+
+<table>
+  <tr>
+   <th>Amplicon Scheme
+   </th>
+   <th>Amplicon Size
+   </th>
+   <th>Notes
+   </th>
+  </tr>
+  <tr>
+   <td><a href="https://raw.githubusercontent.com/pha4ge/primer-schemes/main/sars-cov-2/artic/v3/scheme.bed">ARTIC v3</a>
+   </td>
+   <td>400
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td><a href="https://raw.githubusercontent.com/pha4ge/primer-schemes/main/sars-cov-2/artic/v4/scheme.bed">ARTIC v4</a>
+   </td>
+   <td>400
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td><a href="https://github.com/pha4ge/primer-schemes/blob/main/sars-cov-2/artic/v4.1/scheme.bed">ARTIC v4.1</a>
+   </td>
+   <td>400
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td><a href="https://raw.githubusercontent.com/pha4ge/primer-schemes/main/sars-cov-2/midnight/v1/scheme.bed">Midnight v1</a>
+   </td>
+   <td>1200
+   </td>
+   <td>ONT kit MRT001.10
+   </td>
+  </tr>
+  <tr>
+   <td><a href="https://github.com/pha4ge/primer-schemes/blob/main/sars-cov-2/midnight/v2/scheme.bed">Midnight v2</a>
+   </td>
+   <td>1200
+   </td>
+   <td>ONT kit MRT001.20
+   </td>
+  </tr>
+  <tr>
+   <td><a href="https://raw.githubusercontent.com/pha4ge/primer-schemes/main/sars-cov-2/midnight/ont-v3/scheme.bed">ONT Midnight v3</a>
+   </td>
+   <td>1200
+   </td>
+   <td>ONT kit MRT001.30
+   </td>
+  </tr>
+</table>
+
+If you are using Midnight primers for Oxford Nanopore data, the minimum size should be 150 and the maximum size 1200 (this is because the Nanopore
+Midnight use the rapid library preparation chemistry and thus tagmentation, see [this post](https://labs.epi2me.io/sarscov2-midnight-analysis/)).
+ 
 
 
