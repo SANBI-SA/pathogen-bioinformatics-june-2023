@@ -36,7 +36,7 @@ the ONT analysis.
 
 8. Why do we do primer trimming and adapter trimming?
 
-9. Use the correct output file in the output of the Illumina workflow, to locate a variant in sample SRR11954088, at position 4. What was the reference allele and what was the variant/alternate allele. Can we trust that this is a variant?
+9. Use the correct output file in the output of the Illumina workflow, to locate a variant in sample SRR11954075, at position 4. What was the reference allele and what was the variant/alternate allele. Can we trust that this is a variant?
 
 10. Describe how you will go about uploading a dataset from a link?
 
