@@ -6,5 +6,6 @@ modules:
   - "data-organisation"
   - "sars-cov-2-sequencing"
   - "phylogenomics"
+  - "intro-to-cli"
   
 
