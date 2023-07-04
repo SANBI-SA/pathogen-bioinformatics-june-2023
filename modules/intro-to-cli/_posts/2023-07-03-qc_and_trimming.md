@@ -130,7 +130,7 @@ zless SRR957824_50K_R1.fastq.gz
 ```
 
 !!! tip
-Use the spacebar to scroll down, and type ‘q’ to exit ‘less’
+Use the space bar to scroll down, and type ‘q’ to exit ‘less’
 
 You can read more on the FASTQ format [here](https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/quality-control/slides.html).
 
@@ -276,3 +276,81 @@ You can download the report or view it by clicking on the link below
 
 !!! question
 What did the trimming do to the per-base sequence quality, the per sequence quality scores and the sequence length distribution?
+
+#### Combining the analyses in a shell script
+
+We often want to combine different analyses into a bioinformatics _workflow_. Writing a shell script is a simple
+way to produce such a workflow.
+
+Using nano create a file called `qc.sh` with these contents:
+
+```bash
+#!/bin/bash
+# the line above is a "shebang line" that tells the shell how to run this script
+
+# check that we get two parameters, READ1 and READ2
+if [ $# != 2 ] ; then
+  echo "Usage: qc.sh <READ1> <READ2>\n" >&2
+  exit 1
+fi
+
+# check that we have the adapter sequences
+if [ ! -f adapters.fasta ] ; then
+  echo "Adapter sequences missing" >&2
+  exit 1
+fi
+
+READ1=$1
+READ2=$2
+
+for filename in $READ1 $READ2 ; do
+  if [ ! -f $filename ] ; then
+    echo "Read filename $filename is missing" >&2
+    exit 1
+  fi
+done
+
+# use the first part of READ1 name for the base name of the reads
+# this assumes that the reads are called something ending with _R1.fastq.gz and _R2.fastq.gz
+BASE_READ_NAME=$(echo $READ1 |sed 's/_R1.fastq.gz//')
+
+WORKING_DIR="${BASE_READ_NAME}_tmp"
+
+# delete the working directory if it already exists
+if [ -d $WORKING_DIR ] ; then
+  rm -rf $WORKING_DIR
+fi
+
+mkdir $WORKING_DIR
+cd $WORKING_DIR
+
+mkdir before
+fastqc -o before ../$READ1 ../$READ2
+
+# this assumes that we are running the script from a directory with the ad
+flexbar -a ../adapters.fasta --reads ../$READ1 --reads2 ../$READ2
+
+trimmomatic PE flexbarOut_1.fastq.gz flexbarOut_2.fastq.gz trimmed_paired_r1.fastq.gz trimmed_unpaired_r1.fastq.gz trimmed_paired_r2.fastq.gz trimmed_unpaired_r2.fastq.gz SLIDINGWINDOW:4:20 MINLEN:20
+
+mv trimmed_paired_r1.fastq.gz ${BASE_READ_NAME}_trimmed_R1.fasta.gz
+mv trimmed_paired_r2.fastq.gz ${BASE_READ_NAME}_trimmed_R2.fasta.gz
+
+mkdir after
+fastqc -o after ${BASE_READ_NAME}_trimmed_R1.fasta.gz ${BASE_READ_NAME}_trimmed_R2.fasta.gz
+
+for directory in ../before ../after ; do
+  if [ ! -d $directory ] ; then
+    mkdir $directory
+  fi
+done
+
+cp before/* after/* .
+
+multiqc --filename ${BASE_READ_NAME}_multiqc.html
+
+cp before/* ../before
+cp after/* ../after
+cp ${BASE_READ_NAME}_multiqc.html ..
+cp ${BASE_READ_NAME}_trimmed_R1.fasta.gz ${BASE_READ_NAME}_trimmed_R2.fasta.gz ..
+```
+

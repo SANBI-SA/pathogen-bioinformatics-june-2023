@@ -72,4 +72,57 @@ A log of what you can expect to see during the install can be seen [here](https:
 
 #### Setting up channels
 
-Coming Soon
+Once you have conda installed, you should see a `(base)` added to your prompt e.g. `(base) user1@head:~$`. This means that conda has
+been added to your shell login and is ready for use. As mentioned above, software developers make software available in _channels_
+and these need to be added to your conda configuration. Run these commands (taken from [bioconda](https://bioconda.github.io) instructions):
+
+```bash
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+```
+
+This configures your conda to search for packages from the _conda-forge_ and _bioconda_ channels in addition to the default channel provided by
+Anaconda.org. You are now ready to install software.
+
+#### Installing software with mamba and conda
+
+One of the major advantages of conda as a package manager is that it makes it easy to have multiple _environments_. An environment is a collection
+of software packages. Because not all software works well together (e.g. one package might use Python 2.7, another might use Python 3), best
+practice is to make a new environment for each task that you want to perform and only install related software packages in it. When you start
+in conda you are in the `base` environment (this is what the `(base)` in your prompt means). In general, do not install software into the
+`base` environment!
+
+For our practice, we want to install some quality control and trimming packages. While we could (and perhaps should) make a different
+environment for each software package, for ease of use we will create a single environment called `qc` using the command:
+
+```bash
+mamba create -n qc -y fastqc multiqc flexbar trimmomatic
+```
+
+Note that we are using `mamba` because this allows for faster installations than using the `conda` command (the two commands might merge their
+features in the future though). The `-y` flag tells `mamba` to install packages without checking with you for further confirmation and the
+`-n qc` flag sets the name of the environment being created.
+
+Once the installation of packages (which might take some minutes) is complete, you can use the environment with
+
+```bash
+conda activate qc
+```
+
+This will change your prompt to something like `(qc) user1@head:~$`. You can switch back to the base environment by using `conda deactivate`.
+
+Note that if you happen to use `conda deactivate` too many times, you will completely deactivate conda. Then, to re-activate conda, you should
+either log out and log back in or manually activate conda with `source $HOME/mambaforge/bin/activate`.
+
+### Containers
+
+Our discussion of software installation has focused on package management using conda and mamba. Another technology that is emerging
+for software management is software containers. Containers technology is available on Linux and (with some extra effort) MacOS and
+Windows with WSL2. Instead of installing software on your computer, they provide a custom set of software all gather together into
+a single "container image".
+
+Containers are beyond the scope of this course but if you want to know more about them, you could read up on 
+[Docker for containerised bioinformatics](https://www.melbournebioinformatics.org.au/tutorials/tutorials/docker/docker/) and
+[Singularity containers](https://telatin.github.io/microbiome-bioinformatics/Singularity/).
