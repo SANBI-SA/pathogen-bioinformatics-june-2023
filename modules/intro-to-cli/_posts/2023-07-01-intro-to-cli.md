@@ -34,3 +34,5 @@ on command line bioinformatics.
 The Galaxy Training Network "Foundations of Data Science" training provides a lesson on [CLI basics](https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html) that can be run in an Interactive Environment on the [usegalaxy.eu](https://usegalaxy.eu) server.
 
 If you want to know more about Linux commands, consult this [Linux command reference](../uploads/basic-shell-script.pdf).
+
+And more [Bash Learning Resources](https://telatin.github.io/microbiome-bioinformatics/Bash-resources/) from Microbiome binfies.
