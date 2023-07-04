@@ -288,6 +288,9 @@ Using nano create a file called `qc.sh` with these contents:
 #!/bin/bash
 # the line above is a "shebang line" that tells the shell how to run this script
 
+# exit immediately if there are any errors
+set -e
+
 # check that we get two parameters, READ1 and READ2
 if [ $# != 2 ] ; then
   echo "Usage: qc.sh <READ1> <READ2>\n" >&2
@@ -328,7 +331,7 @@ mkdir before
 fastqc -o before ../$READ1 ../$READ2
 
 # this assumes that we are running the script from a directory with the ad
-flexbar -a ../adapters.fasta --reads ../$READ1 --reads2 ../$READ2
+flexbar -z GZ -a ../adapters.fasta --reads ../$READ1 --reads2 ../$READ2
 
 trimmomatic PE flexbarOut_1.fastq.gz flexbarOut_2.fastq.gz trimmed_paired_r1.fastq.gz trimmed_unpaired_r1.fastq.gz trimmed_paired_r2.fastq.gz trimmed_unpaired_r2.fastq.gz SLIDINGWINDOW:4:20 MINLEN:20
 
@@ -346,7 +349,7 @@ done
 
 cp before/* after/* .
 
-multiqc --filename ${BASE_READ_NAME}_multiqc.html
+multiqc --filename ${BASE_READ_NAME}_multiqc.html .
 
 cp before/* ../before
 cp after/* ../after
@@ -354,3 +357,14 @@ cp ${BASE_READ_NAME}_multiqc.html ..
 cp ${BASE_READ_NAME}_trimmed_R1.fasta.gz ${BASE_READ_NAME}_trimmed_R2.fasta.gz ..
 ```
 
+Then make this script executable with:
+
+```bash
+chmod a+x qc.sh
+```
+
+and run it with:
+
+```bash
+./qc.sh SRR957824_50K_R1.fastq.gz SRR957824_50K_R2.fastq.gz
+```
