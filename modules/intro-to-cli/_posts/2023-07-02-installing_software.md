@@ -49,7 +49,9 @@ Software package managers can only install software if it is built for the corre
 #### Getting started with Mambaforge
 
 To get started, you need to download the correct installer for the package management system. Since we will be using
-_Mambaforge_, download the release for Linux on amd64. This can be done from your Bash command line using the command:
+_Mambaforge_, download the correct release for your operating system. 
+
+For Linux on x86_64 / amd64, download using:
 
 ```bash
 wget -c https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh
@@ -57,10 +59,25 @@ wget -c https://github.com/conda-forge/miniforge/releases/latest/download/Mambaf
 
 (the `-c` command line flag will ensure that your download will continue if it somewhat got interrupted)
 
+for MacOS on x86_64 / amd64, download using:
+
+```bash
+curl -O -J -L -C - https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-MacOSX-x86_64.sh
+```
+
+
 Then install the downloaded installer by running it using `bash`:
+
+For Linux:
 
 ```bash
 bash Mambaforge-Linux-x86_64.sh
+```
+
+For MacOS:
+
+```bash
+bash Mambaforge-MacOSX-x86_64.sh
 ```
 
 The installer will ask you to agree to a License Agreement. Press the space bar to page through the license agreement
