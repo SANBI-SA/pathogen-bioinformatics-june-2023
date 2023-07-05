@@ -288,7 +288,7 @@ Using nano create a file called `qc.sh` with these contents:
 #!/bin/bash
 # the line above is a "shebang line" that tells the shell how to run this script
 
-# exit immediately if there are any errors
+# tell bash to exit immediately if there are any errors
 set -e
 
 # check that we get two parameters, READ1 and READ2
@@ -327,17 +327,21 @@ fi
 mkdir $WORKING_DIR
 cd $WORKING_DIR
 
+echo Running FastQC on untrimmed reads
 mkdir before
 fastqc -o before ../$READ1 ../$READ2
 
+echo Trimming adapters with flexbar
 # this assumes that we are running the script from a directory with the ad
 flexbar -z GZ -a ../adapters.fasta --reads ../$READ1 --reads2 ../$READ2
 
+echo Quality trimming with trimmomatic
 trimmomatic PE flexbarOut_1.fastq.gz flexbarOut_2.fastq.gz trimmed_paired_r1.fastq.gz trimmed_unpaired_r1.fastq.gz trimmed_paired_r2.fastq.gz trimmed_unpaired_r2.fastq.gz SLIDINGWINDOW:4:20 MINLEN:20
 
 mv trimmed_paired_r1.fastq.gz ${BASE_READ_NAME}_trimmed_R1.fasta.gz
 mv trimmed_paired_r2.fastq.gz ${BASE_READ_NAME}_trimmed_R2.fasta.gz
 
+echo Running FastQC on trimmed reads
 mkdir after
 fastqc -o after ${BASE_READ_NAME}_trimmed_R1.fasta.gz ${BASE_READ_NAME}_trimmed_R2.fasta.gz
 
@@ -349,12 +353,24 @@ done
 
 cp before/* after/* .
 
+echo Running multiqc
 multiqc --filename ${BASE_READ_NAME}_multiqc.html .
 
 cp before/* ../before
 cp after/* ../after
 cp ${BASE_READ_NAME}_multiqc.html ..
 cp ${BASE_READ_NAME}_trimmed_R1.fasta.gz ${BASE_READ_NAME}_trimmed_R2.fasta.gz ..
+
+echo Deleting working directory
+rm -rf $WORKING_DIR
+
+echo DONE
+```
+
+You can download this script with:
+
+```bash
+curl -J -O -L 'https://www.dropbox.com/s/hvgirjqememlo92/qc.sh'
 ```
 
 Then make this script executable with:
