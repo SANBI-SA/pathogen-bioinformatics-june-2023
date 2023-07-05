@@ -1,6 +1,6 @@
 ---
 title: Quality Control and Trimming on the Command Line
-----
+---
 
 ### Quality Control and Trimming
 
@@ -21,6 +21,9 @@ the login or "head node" of the cluster. To do the work for this tutorial, you n
 ```bash
 srun --pty bash
 ```
+
+(Note that `srun` is a command provided by the Slurm job scheduling system. To learn more about working on a cluster with Slurm, read
+[this guide](https://cvw.cac.cornell.edu/slurm/basics_execution_srun))
 
 This will start a `bash` shell on of the cluster worker nodes. Your prompt will change, e.g.
 
