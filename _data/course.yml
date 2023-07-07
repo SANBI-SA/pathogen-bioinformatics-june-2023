@@ -7,5 +7,6 @@ modules:
   - "sars-cov-2-sequencing"
   - "phylogenomics"
   - "intro-to-cli"
+  - "nextflow"
   
 
