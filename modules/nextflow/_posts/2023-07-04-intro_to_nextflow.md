@@ -23,7 +23,7 @@ In addition to Galaxy, several command-line oriented workflow management systems
 
 We will be focusing on _Nextflow_ because it is widely used, has an activate community of workflow-publisher (e.g. the [nf-core](https://nf-co.re/) project) and has useful features such as dependency management and support for resuming workflows.
 
-Our training was drawn from the [Nextflow Basic Training](https://training.nextflow.io/basic_training/) materials. After you have installed Nextflow (see the notes on that [here](https://training.nextflow.io/basic_training/setup/#local-installation)), start with the training [Introduction]https://training.nextflow.io/basic_training/intro/).
+Our training was drawn from the [Nextflow Basic Training](https://training.nextflow.io/basic_training/) materials. After you have installed Nextflow (see the notes on that [here](https://training.nextflow.io/basic_training/setup/#local-installation)), start with the training [Introduction](https://training.nextflow.io/basic_training/intro/).
 
 #### Key points on Nextflow
 
